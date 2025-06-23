@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<head>
+  <title>SSB-phoneme-le</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+  <div id="custom-maker">
+    make your own puzzle!
+
+    <br/>
+    <br/>
+
+    <label for="custom-word-input">word: </label>
+    <input type="text" size="10" id="custom-word-input" name="custom-word-input">
+
+    <br/>
+
+    <label for="custom-guess-count-input">guess count: </label>
+    <input type="number" style="width: 56px;" id="custom-guess-count-input" name="custom-guess-count-input" value="6" min="1">
+
+    <br/>
+    <button id="copy-custom-link" onclick="copyCustomLink()">copy link</button>
+    <a id="custom-link-feedback" style="opacity: 0;"></a>
+
+    <button style="position: absolute; right: 5px; bottom: 5px;" onclick="document.getElementById('custom-maker').hidden = true">close</button>
+
+  </div>
+
+  <div id="game" class="center">
+    <div id="not-a-word-popup">not a word in CUBE!</div>
+    <table id="guess-table" class="center">
+    </table>
+
+    <table id="keyboard" class="center">
+      <tr>
+        <td class="key">p</td>
+        <td class="key">t</td>
+        <td class="key" accesskey="C">ʧ</td>
+        <td class="key">k</td>
+        <td class="emtpy-key"></td>
+        <td class="key">f</td>
+        <td class="key" accesskey="T">θ</td>
+        <td class="key">s</td>
+        <td class="key" accesskey="S">ʃ</td>
+      </tr>
+      <tr>
+        <td class="key">b</td>
+        <td class="key">d</td>
+        <td class="key" accesskey="G">ʤ</td>
+        <td class="key">g</td>
+        <td class="emtpy-key"></td>
+        <td class="key">v</td>
+        <td class="key" accesskey="D">ð</td>
+        <td class="key">z</td>
+        <td class="key" accesskey="Z">ʒ</td>
+      </tr>
+      <tr>
+        <td class="key">w</td>
+        <td class="key">l</td>
+        <td class="key">j</td>
+        <td class="key" accesskey="r">ɹ</td>
+        <td class="key">h</td>
+        <td class="empty-key"></td>
+        <td class="key">m</td>
+        <td class="key">n</td>
+        <td class="key" accesskey="N">ŋ</td>
+      </tr>
+      <tr>
+        <td class="key" accesskey="i">ɪ</td>
+        <td class="key" accesskey="e">ɛ</td>
+        <td class="key">a</td>
+        <td class="key" accesskey="@">ə</td>
+        <td class="key" accesskey="u">ɵ</td>
+        <td class="key" accesskey="y">ʌ</td>
+        <td class="key" accesskey="o">ɔ</td>
+      </tr>
+      <tr>
+        <td class="key" accesskey="i:">ɪː</td>
+        <td class="key" accesskey="e:">ɛː</td>
+        <td class="emtpy-key"></td>
+        <td class="key" accesskey="@:">əː</td>
+        <td class="key" accesskey="u:">ɵː</td>
+        <td class="key" accesskey="a:">ɑː</td>
+        <td class="key" accesskey="o:">oː</td>
+        <td class="emtpy-key"></td>
+        <td class="nonphoneme-key" id="backspace-key">⌫</td>
+      </tr>
+      <tr>
+        <td class="key" accesskey="ij">ɪj</td>
+        <td class="key" accesskey="ej">ɛj</td>
+        <td class="key">aw</td>
+        <td class="key" accesskey="@w">əw</td>
+        <td class="key" accesskey="uw">ʉw</td>
+        <td class="key" accesskey="aj">ɑj</td>
+        <td class="key">oj</td>
+        <td class="emtpy-key"></td>
+        <td class="nonphoneme-key" id="enter-key">↲</td>
+      </tr>
+      
+    </table>
+  </div>
+
+  <div id="win-overlay" class="center">
+    you won!
+    <br/>
+    word #<span id="win-word-info-span"></span>.
+    <br/>
+    <p id="win-results"></p>
+    <button id="win-copy-results-button" onclick="copyResults()">copy results</button>
+    <button id="win-copy-link-button" onclick="copyLink()">copy link</button>
+    <br/>
+    <a id="win-copy-indicator" style="font-size: 18px; opacity: 0;">copied!</a>
+    <br/>
+    <button id="win-play-again-button" onclick="playAgain()">play again</button>
+  </div>
+  
+  <div id="lose-overlay" class="center">
+    better luck next time!
+    <br/>
+    the word was #<span id="lose-word-info-span"></span>.
+    <br/>
+    <p id="lose-results"></p>
+    <button id="lose-copy-results-button" onclick="copyResults()">copy results</button>
+    <button id="lose-copy-link-button" onclick="copyLink()">copy link</button>
+    <br/>
+    <a id="lose-copy-indicator" style="font-size: 18px; opacity: 0;">copied!</a>
+    <br/>
+    <button id="lose-play-again-button" onclick="playAgain()">play again</button>
+
+  </div>
+
+
+
+  <script src="words.js"></script>
+  <script src="main.js"></script>
+</body>

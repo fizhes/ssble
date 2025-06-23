@@ -1,0 +1,107 @@
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: DarkGray;
+}
+
+
+#not-a-word-popup {
+  position: absolute;
+  left: 50%;
+  width: 20vw;
+  margin-left: -10vw;
+  top: 2vh;
+  z-index: 10000;
+  text-align: center;
+  background-color: #aaaaff;
+  font-size: 32px;
+  opacity: 0;
+}
+
+#win-overlay, #lose-overlay {
+  width: 75vw;
+  height: 90vh;
+  background-color: #aaaaff;
+  font: 'Times New Roman', Times, serif;
+  font-size: 32px;
+  /* visibility: hidden; */
+  text-align: center;
+}
+
+.fadeinout {
+  animation: fadeinout 1s linear forwards;
+  -webkit-animation: fadeinout 1s linear forwards;
+}
+
+@keyframes fadeinout {
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  0%, 100% { opacity: 0; }
+}
+@-webkit-keyframes fadeinout {
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  0%, 100% { opacity: 0; }
+}
+
+.center {
+  /* max-width: fit-content; */
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: 25px; */
+  /* background-color: DarkSlateGray; */
+}
+
+table {
+  border-spacing: 5px;
+}
+
+td {
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 24px;
+  text-align: center;
+  text-wrap: pretty;
+}
+
+.guess-box {
+  width: 8vh;
+  height: 8vh;
+  background-color: black;
+  border: 3px solid DarkSlateGray;
+  font-size: 90%;
+}
+
+.key, .nonphoneme-key {
+  font-size: 3.5vh;
+  width: 5vh;
+  height: 5vh;
+  border: 1px solid DarkSlateGray;
+  cursor: pointer;
+  background-color: black;
+}
+
+.empty-key {
+  font-size: 3.5vh;
+  width: 5vh;
+  height: 5vh;
+  border: none;
+  background-color: #0000;
+  cursor: default;
+}
+
+
+#custom-maker {
+  position: absolute;
+  font-size: 32px;
+  background-color: #aaaaff;
+  border: 2px solid navy;
+  margin: 5px;
+  padding: 5px;
+}
+
+input, button {
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif
+}
