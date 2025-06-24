@@ -109,7 +109,7 @@ document.getElementById('enter-key').onclick = evt => {
         correct = false
         guessTDs[rowIndex][i].style.backgroundColor = (
           transcription.includes(guess[i]) &&
-            transcription.filter(p => p === guess[i]).length >= guess.filter(p => p === guess[i]).length
+            transcription.filter(p => p === guess[i]).length >= guess.slice(0, i + 1).filter(p => p === guess[i]).length
           ? colors.wrongPlace : colors.wrong
         )
       }
