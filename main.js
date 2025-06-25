@@ -51,7 +51,7 @@ const guessTRs = Array(guessCount).fill(0).map((q, i) => {
     const td = document.createElement('td')
     td.className = 'guess-box'
     td.style.width = td.style.height = `${window.innerHeight / (2 * guessCount)}px`
-    td.style.fontSize = `${window.innerHeight / (2 * guessCount) * 0.85}px`
+    td.style.fontSize = `${window.innerHeight / (2 * guessCount) * 0.8}px`
     tr.appendChild(td)
   }
   guessTable.appendChild(tr)
